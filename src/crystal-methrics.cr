@@ -20,5 +20,4 @@ module Crystal::Methrics
       server.listen
     end
   end
-
 end
