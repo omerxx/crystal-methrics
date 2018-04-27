@@ -11,3 +11,8 @@ targets:
 crystal: 0.24.2
 
 license: MIT
+
+dependencies:
+  router:
+    github: tbrand/router.cr
+
