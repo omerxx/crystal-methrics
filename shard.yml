@@ -1,0 +1,13 @@
+name: crystal-methrics
+version: 0.1.0
+
+authors:
+  - omerxx <omerxx@gmail.com>
+
+targets:
+  crystal-methrics:
+    main: src/crystal-methrics.cr
+
+crystal: 0.24.2
+
+license: MIT
