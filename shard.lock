@@ -4,6 +4,10 @@ shards:
     github: luislavena/radix
     version: 0.3.8
 
+  redis:
+    github: stefanwille/crystal-redis
+    version: 1.10.0
+
   router:
     github: tbrand/router.cr
     version: 0.2.2

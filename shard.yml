@@ -16,3 +16,6 @@ dependencies:
   router:
     github: tbrand/router.cr
 
+  redis:
+      github: stefanwille/crystal-redis
+      version: ~> 1.10.0
