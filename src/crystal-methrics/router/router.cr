@@ -1,4 +1,5 @@
 require "router"
+require "../redis/redis"
 
 # TODO: Write documentation for `Crystal::Methrics`
 module Crystal::Methrics
@@ -8,6 +9,11 @@ module Crystal::Methrics
     def draw_routes
       get "/" do |context, params|
         context.response.print "Hello WORLD"
+        context
+      end
+
+      get "/redis" do |context, params|
+        context.response.print test
         context
       end
     end

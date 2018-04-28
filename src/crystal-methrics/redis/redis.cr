@@ -1,8 +1,10 @@
 require "redis"
 
-redis = Redis.new
+def test
+  redis = Redis.new
 
-puts "doing"
-redis.set("foo", "bar")
-test = redis.get("foo")
-puts test
+  puts "doing"
+  redis.set("foo", "bar")
+  test = redis.get("foo")
+  return test
+end
