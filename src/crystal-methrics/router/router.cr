@@ -16,6 +16,11 @@ module Crystal::Methrics
         context.response.print test
         context
       end
+
+      get "/key/:key_id/metric/:metric_id" do |context, params|
+        context.response.print metric_store(params)
+        context
+      end
     end
 
     def run
