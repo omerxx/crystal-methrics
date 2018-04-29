@@ -1,6 +1,6 @@
 # crystal-methrics
 
-TODO: Write a description here
+Lightning fast and slim application, that listens to metrics requests and stores them in Redis
 
 ## Installation
 
