@@ -11,6 +11,6 @@ end
 
 def metric_store(metrics)
   redis = Redis.new
-  redis.set("user:#{metrics["metric_id"]}", metrics["key_id"])
-  return redis.get("user:#{metrics["metric_id"]}")
+  redis.set("key:#{metrics["key_id"]}", metrics["metric_id"])
+  return "Sucsses: #{redis.get("key:#{metrics["key_id"]}")}"
 end

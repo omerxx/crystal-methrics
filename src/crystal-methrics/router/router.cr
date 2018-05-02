@@ -17,7 +17,7 @@ module Crystal::Methrics
         context
       end
 
-      get "/key/:key_id/metric/:metric_id" do |context, params|
+      post "/key/:key_id/metric/:metric_id/value/:metric_value" do |context, params|
         context.response.print metric_store(params)
         context
       end
