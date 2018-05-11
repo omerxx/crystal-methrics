@@ -16,9 +16,11 @@ services:
     ports:
       - 8001:8001
     volumes:
-      - ./lib/logstash/logstash.conf:/root/logstash.conf
+      - ./lib/logstash/logstash.conf:/usr/share/logstash/config/logstash.conf
+      - ./lib/logstash/logstash.yml:/usr/share/logstash/config/logstash.yml
       - ./output:/app
-    command: logstash -f /root/logstash.conf
+    # command: tail -f /dev/null
+    command: logstash -f /usr/share/logstash/config/logstash.conf
 
   redis:
     image: redis
