@@ -1,7 +1,7 @@
 FROM jrei/crystal-alpine as builder
 COPY . /opt/app
 WORKDIR /opt/app
-RUN crystal build --release /opt/app/src/run.cr
+RUN crystal build --static --release /opt/app/src/crystal-methrics.cr
 
 
 FROM scratch

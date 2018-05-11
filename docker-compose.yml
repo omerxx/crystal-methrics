@@ -5,6 +5,7 @@ services:
     build: .
     environment:
       - PORT=8000
+      - REDIS_HOST=redis
     ports:
       - 8000:8000
     volumes:
@@ -15,7 +16,9 @@ services:
     ports:
       - 8001:8001
     volumes:
-      - ./SOMETHING
+      - ./lib/logstash/logstash.conf:/root/logstash.conf
+      - ./output:/app
+    command: logstash -f /root/logstash.conf
 
   redis:
     image: redis

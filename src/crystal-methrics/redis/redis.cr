@@ -18,6 +18,7 @@ module RedisApp
 
     def connect()
       host = ENV["REDIS_HOST"] ||= "localhost"
+      puts "Redis host: #{host}"
       Redis.new(host: host, port: 6379)
     end
   end

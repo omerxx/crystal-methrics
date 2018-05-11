@@ -27,7 +27,7 @@ module Crystal::Methrics
 
     def run
       port = ENV["PORT"] ||= "3000"
-      server = HTTP::Server.new(port.to_i, route_handler)
+      server = HTTP::Server.new("0.0.0.0", port.to_i, route_handler)
       puts "Listening on #{port}..."
       server.listen
     end
