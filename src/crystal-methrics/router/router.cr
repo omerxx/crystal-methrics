@@ -8,8 +8,8 @@ module Crystal::Methrics
     def draw_routes
       redisapp = RedisApp::Actions.new
 
-      get "/" do |context, params|
-        context.response.print "Hello WORLD"
+      get "/health" do |context, params|
+        context.response.print "4Cyl750!"
         context
       end
 
@@ -18,7 +18,7 @@ module Crystal::Methrics
         context
       end
 
-      post "/key/:key_id/value/:metric_value" do |context, params|
+      get "/key/:key_id/value/:metric_value" do |context, params|
         metric = Data::Point.new(params["key_id"], params["metric_value"].to_i)
         context.response.print redisapp.metric_store(metric)
         context

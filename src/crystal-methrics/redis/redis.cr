@@ -3,8 +3,7 @@ require "redis"
 module RedisApp
   class Actions
     def test
-      redis = Redis.new
-
+      redis = self.connect
       puts "doing"
       redis.set("foo", "bar")
       test = redis.get("foo")
@@ -12,9 +11,14 @@ module RedisApp
     end
 
     def metric_store(metric)
-      redis = Redis.new
+      redis = self.connect
       redis.set("key:#{metric.key}", metric.value)
       return "Success: #{redis.get("key:#{metric.key}")}"
+    end
+
+    def connect()
+      host = ENV["REDIS_HOST"] ||= "localhost"
+      Redis.new(host: host, port: 6379)
     end
   end
 end
