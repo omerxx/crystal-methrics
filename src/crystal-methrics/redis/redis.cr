@@ -12,7 +12,7 @@ module RedisApp
       redis.rpush("metrics", "#{metric.key} #{metric.value}")
     end
 
-    def connect()
+    def connect
       host = ENV["REDIS_HOST"] ||= "localhost"
       puts "Redis host: #{host}"
       Redis.new(host: host, port: 6379)

@@ -12,6 +12,11 @@ services:
       - .:/app
     command: tail -f /dev/null
 
+  redis:
+    image: redis
+    ports:
+      - 6379:6379
+
   logstash:
     image: logstash
     ports:
@@ -23,9 +28,10 @@ services:
     # command: tail -f /dev/null
     command: logstash -f /usr/share/logstash/config/logstash.conf
 
-  redis:
-    image: redis
+  elasticsearch:
+    image: elasticsearch
     ports:
-      - 6379:6379
+      - 9200:9200
+
 
 
