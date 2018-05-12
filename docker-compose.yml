@@ -18,7 +18,7 @@ services:
       - 8001:8001
     volumes:
       - ./lib/logstash/logstash.conf:/usr/share/logstash/config/logstash.conf
-      - ./lib/logstash/logstash.yml:/usr/share/logstash/config/logstash.yml
+      - ./lib/logstash/logstash.yml:/etc/logstash/logstash.yml
       - ./output:/app
     # command: tail -f /dev/null
     command: logstash -f /usr/share/logstash/config/logstash.conf
