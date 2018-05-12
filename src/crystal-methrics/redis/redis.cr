@@ -4,16 +4,12 @@ module RedisApp
   class Actions
     def test
       redis = self.connect
-      puts "doing"
-      redis.set("foo", "bar")
-      test = redis.get("foo")
-      return test
+      redis.rpush "metrics", "Something"
     end
 
     def metric_store(metric)
       redis = self.connect
-      redis.set("key:#{metric.key}", metric.value)
-      return "Success: #{redis.get("key:#{metric.key}")}"
+      redis.rpush("metrics", "#{metric.key} #{metric.value}")
     end
 
     def connect()

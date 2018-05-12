@@ -2,7 +2,7 @@ version: '2'
 
 services:
   crystal-methrics:
-    build: .
+    image: jrei/crystal-alpine
     environment:
       - PORT=8000
       - REDIS_HOST=redis
@@ -10,6 +10,7 @@ services:
       - 8000:8000
     volumes:
       - .:/app
+    command: tail -f /dev/null
 
   logstash:
     image: logstash

@@ -13,13 +13,13 @@ module Crystal::Methrics
         context
       end
 
-      get "/redis" do |context, params|
+      get "/test" do |context, params|
         context.response.print redisapp.test
         context
       end
 
-      get "/key/:key_id/value/:metric_value" do |context, params|
-        metric = Data::Point.new(params["key_id"], params["metric_value"].to_i)
+      get "/metric/:metric_id/value/:metric_value" do |context, params|
+        metric = Data::Point.new(params["metric_id"], params["metric_value"].to_i)
         context.response.print redisapp.metric_store(metric)
         context
       end
