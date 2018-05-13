@@ -6,50 +6,10 @@
   },
   "mappings": {
     "_default_": {
-      "dynamic_templates": [
-        {
-          "message_field": {
-            "mapping": {
-              "fielddata": {
-                "format": "disabled"
-              },
-              "index": "analyzed",
-              "omit_norms": true,
-              "type": "string"
-            },
-            "match_mapping_type": "string",
-            "match": "message"
-          }
-        },
-        {
-          "metric_field": {
-            "mapping": {
-              "fielddata": {
-                "format": "disabled"
-              },
-              "index": "analyzed",
-              "omit_norms": true,
-              "type": "string"
-            },
-            "match_mapping_type": "string",
-            "match": "metric"
-          }
-        },
-        {
-          "value_field": {
-            "mapping": {
-              "fielddata": {
-                "format": "disabled"
-              },
-              "index": "analyzed",
-              "omit_norms": true,
-              "type": "long"
-            },
-            "match_mapping_type": "long",
-            "match": "value"
-          }
-        }
-      ]
+      "properties": {
+        "metric":{"type":"text"},
+        "value":{"type":"integer"}
+      }
     }
   }
 }
