@@ -1,5 +1,6 @@
 {
-  "template": "metrics",
+  "template": "*",
+  "index_patterns": ["*"],
   "settings": {
     "index.refresh_interval": "5s"
   },
@@ -42,7 +43,7 @@
               },
               "index": "analyzed",
               "omit_norms": true,
-              "type": "string"
+              "type": "long"
             },
             "match_mapping_type": "long",
             "match": "value"
