@@ -1,6 +1,10 @@
 # crystal-methrics
 
-Lightning fast and slim application, that listens to metrics requests and stores them in Redis
+A blazing fast crystal lang events data pipeline utlizing redis and ELK, visualizing the data automatically
+
+## Data Flow
+
+Crystal Router --> Redis Cache --> Logstash Enrichment --> ElasticSearch --> Visualization
 
 ## Installation
 
