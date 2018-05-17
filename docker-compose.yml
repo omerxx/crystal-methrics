@@ -28,10 +28,15 @@ services:
     # command: tail -f /dev/null
     command: logstash -f /usr/share/logstash/config/logstash.conf
 
-  elasticsearch:
-    image: elasticsearch
+  graphite:
+    image: graphiteapp/graphite-statsd
     ports:
-      - 9200:9200
+      - 8000:80
+      - 2003-2004:2003-2004
+      - 2023-2024:2023-2024
+      - 8125:8125/udp
+      - 8126:8126
+
 
 
 
