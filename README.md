@@ -1,6 +1,7 @@
 # crystal-methrics
 
-A blazing fast crystal lang events data pipeline utlizing redis and ELK, visualizing the data automatically
+Send any metric, from anywhere, using a simple HTTP request and get it visualized.
+No SDKs, not pricey metric frameworks, and no special strcuture or scheme: `<crystal-methrics-domain>/metric/my-event/value/100`
 
 ## Data Flow
 
@@ -8,15 +9,23 @@ Crystal Router --> Redis Cache --> Logstash Enrichment --> ElasticSearch --> Vis
 
 ## Installation
 
-TODO: Write installation instructions here
+Lazy?
+```
+docker compose up
+```
+Yes, that's it.
+
+Looking for robustness? 
+Deploy logstash as a container service in your production infrastructure.
+Deploy Redis anywhere e.g ElasticCache.
+Deplou ElasticSearch anywhere e.g AWS's ElasticSearch as a Service.
+Deploy Crystal Methrics as a binary / docker container / whereever.
 
 ## Usage
 
-TODO: Write usage instructions here
-
-## Development
-
-TODO: Write development instructions here
+```
+<crystal-methrics-domain>/metric/my-event/value/100
+```
 
 ## Contributing
 
